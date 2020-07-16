@@ -1,6 +1,7 @@
 import sys
 
 sys.path.append('./server')
+sys.path.append('../sentiment_classifier/lib')
 
 from flask import Flask
 import controller.news_analyzer_controller

@@ -15,12 +15,12 @@ class PoliticsMediaAnalizer:
         
     def __filtering_criteria(self, news):
         keywords = self.__subject_details.contextidentifiers
-        return max([key in news['title'] or key in news['content'] for key in keywords])
+        return max([key in unidecode(news['title']) or key in unidecode(news['content']) for key in keywords])
 
     def __clean_data(self, raw_data):
         for news in raw_data:
-            news['title'] = unidecode(news['title'].lower())
-            news['content'] = unidecode(news['content'].lower())
+            news['title'] = news['title'].lower()
+            news['content'] = news['content'].lower()
         return raw_data
     
     def analyze_by_provider(self, provider):
