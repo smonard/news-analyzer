@@ -8,7 +8,7 @@ class PoliticsMediaAnalizer:
     def __init__(self):
         self.__subject_details = AnalysisSubjectDetails()
         self.__news_analyzer = NewsAnalyzer(self.__subject_details)
-        self.__translations = { 'neutral': 'Neutral', 'positive': 'Supporter', 'negative': 'Opponent' }
+        self.__translations = { 'neutral': 'Neutral', 'positive': 'Supporter', 'negative': 'Opponent', 'non-analyzable': 'Non-Analyzable' }
         
     def __switch_source_loader(self, loader_key):
         self.__source_loader = HttpSourceLoader() if loader_key == 'http' else FileSourceLoader()

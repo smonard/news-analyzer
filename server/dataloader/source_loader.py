@@ -8,8 +8,8 @@ class FileSourceLoader:
             'vistazo': 'data_vistazo.json',
             'universo': 'data_universo.json',
             'comercio': 'data_comercio.json',
-            'hora': 'data_hora.json',
-            'diario': 'data_diario.json',
+            'mercurio': 'data_mercurio.json',
+            'expreso': 'data_expreso.json',
             'telegrafo': 'data_telegrafo.json'
         }
         

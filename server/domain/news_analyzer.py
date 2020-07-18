@@ -21,7 +21,8 @@ class NewsAnalyzer:
         analysis_units = [ phrase for unit in analysis_units for phrase in unit ]
         representative_data = len(analysis_units) >= len(news_chunks) * 0.3
         unit_results = Counter(list(map(lambda unit: self.__sentiment_analyzer.analyze(unit, usetb=single), analysis_units)))
-        return { 'position': unit_results.most_common()[0][0], 
+        position = unit_results.most_common()[0][0] if len(unit_results.most_common()) else 'non-analyzable'
+        return { 'position': position, 
                  'provider': news['provider'],
                  'details': { k: v/len(analysis_units) for k, v in dict(unit_results).items() }, 
                  'representative': representative_data,

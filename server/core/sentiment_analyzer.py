@@ -4,7 +4,7 @@ from sentiment_estimator import SentimentEstimator
 
 class SentimentAnalyzer:
     def __init__(self):
-        self.__sentiment_estimator = SentimentEstimator(context_path='../sentiment-estimator/data/')
+        self.__sentiment_estimator = SentimentEstimator(context_path='../sentiment_estimator/data/')
     
     def analyze(self, text, usetb=False):
         sentiment = self.__sentiment_estimator.predict(text) / 2.0
